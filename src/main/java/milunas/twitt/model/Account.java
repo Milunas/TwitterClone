@@ -5,6 +5,7 @@ import com.sun.istack.internal.Nullable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Account {
@@ -16,6 +17,8 @@ public class Account {
     private String password;
     private String email;
     private String userSecurityToken;
+    @OneToOne
+    private User user;
 
     public Account(){
 
@@ -26,6 +29,7 @@ public class Account {
         this.password = password;
         this.email = email;
         this.userSecurityToken = null;
+        this.user = new User();
     }
 
     public void setUsername(String username) {
