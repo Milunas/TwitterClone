@@ -1,10 +1,23 @@
 package milunas.twitt.command;
 
+import javax.validation.constraints.NotNull;
+
 public class AccountCreate {
 
+    private String id;
+    @NotNull
     private String username;
+    @NotNull
     private String password;
     private String email;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getUsername() {
         return username;
@@ -29,4 +42,6 @@ public class AccountCreate {
     public void setEmail(String email) {
         this.email = email;
     }
+
+
 }

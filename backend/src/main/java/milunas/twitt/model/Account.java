@@ -1,7 +1,5 @@
 package milunas.twitt.model;
 
-import com.sun.istack.internal.Nullable;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;

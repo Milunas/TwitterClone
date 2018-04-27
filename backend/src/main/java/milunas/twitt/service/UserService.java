@@ -12,19 +12,19 @@ import java.util.Date;
 import java.util.List;
 
 @Service
-public class TwittService {
+public class UserService {
 
     @Autowired
     private TwittRepository repository;
 
     public ResponseEntity<List<Twitt>> getAllTwitts(){
        List<Twitt> allTwitts = repository.findAll();
-        return new ResponseEntity<List<Twitt>>(allTwitts, HttpStatus.ACCEPTED);
+        return new ResponseEntity(allTwitts, HttpStatus.ACCEPTED);
     }
 
     public ResponseEntity<List<Twitt>> getAllUserTwitts(String author){
         List<Twitt> userTwitts = repository.findByAuthor(author);
-        return new ResponseEntity<List<Twitt>>(userTwitts, HttpStatus.ACCEPTED);
+        return new ResponseEntity(userTwitts, HttpStatus.ACCEPTED);
     }
 
     public ResponseEntity<Void> createNewTwitt(TwittCreate twittCreate){
@@ -32,7 +32,7 @@ public class TwittService {
         repository.save(twitt);
         HttpHeaders responseHeaders = new HttpHeaders();
         responseHeaders.set("Location", twitt.getId()+"");
-        return new ResponseEntity<Void>(responseHeaders, HttpStatus.CREATED);
+        return new ResponseEntity(responseHeaders, HttpStatus.CREATED);
     }
 
 }

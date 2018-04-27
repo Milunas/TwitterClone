@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("api/account")
 public class AccountController {
 
     @Autowired
@@ -20,8 +21,8 @@ public class AccountController {
         return service.createNewAccount(accountCreate);
     }
 
-    @PostMapping("/login")
-    public ResponseEntity<Void> getToken(@RequestBody AccountCreate account){
-        return service.generateToken(account);
+    @PutMapping("/login")
+    public ResponseEntity<Void> login(@RequestBody AccountCreate account){
+        return service.login(account);
     }
 }
