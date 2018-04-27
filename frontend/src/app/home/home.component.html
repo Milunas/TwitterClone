@@ -1,0 +1,12 @@
+<h1>Hi {{currentUser.username}}!</h1>
+<div>
+  <h2>List of twitts</h2>
+  <ul class = "twitts">
+    <li *ngFor ="let twitt of twitts">
+      <span>{{twitt.message}}</span>
+      <span>{{twitt.author}}</span>
+    </li>
+  </ul>
+  <p><a [routerLink]="['/login']">Logout</a></p>
+  <p><a [routerLink]="['/create']">Create new twitt!</a></p>
+</div>

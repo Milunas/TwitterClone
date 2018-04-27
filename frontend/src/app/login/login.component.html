@@ -1,0 +1,12 @@
+<div>
+  <form>
+    <div>
+      <label>Login: </label>
+        <input name = "username" [(ngModel)]="model.username" #username="ngModel" required/>
+      <label>Password: </label>
+        <input type = "password" name = "password" [(ngModel)]="model.password" #password="ngModel" required/>
+      <button (click)="login()">Go in!</button> 
+    </div>
+  </form>
+  <a [routerLink]="['/register']">Register</a>
+</div>
